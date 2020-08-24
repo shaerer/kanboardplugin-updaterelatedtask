@@ -14,11 +14,10 @@ class Plugin extends Base
         $this->template->hook->attach('template:task:sidebar:actions', 'UpdateRelatedTaskButton:update_related_task/update_related_task_button');
     }
 
-#ToDo
-#    public function onStartup()
-#    {
-#        Translator::load($this->languageModel->getCurrentLanguage(), __DIR__.'/Locale');
-#    }
+    public function onStartup()
+    {
+        Translator::load($this->languageModel->getCurrentLanguage(), __DIR__.'/Locale');
+    }
 
     public function getPluginName()
     {
