@@ -5,7 +5,7 @@ namespace Kanboard\Plugin\TaskIntervalButton\Controller;
 use Kanboard\Controller\BaseController;
 use Kanboard\Core\Controller\AccessForbiddenException;
 
-class TaskIntervalController extends BaseController
+class UpdateRelatedTaskController extends BaseController
 {
     public function confirm()
     {
@@ -16,16 +16,17 @@ class TaskIntervalController extends BaseController
             throw new AccessForbiddenException();
         }
 
-        $this->response->html($this->template->render('TaskIntervalButton:task_add_interval/add_interval_confirm', array(
+        $this->response->html($this->template->render('UpdateRelatedTaskButton:update_related_task/update_confirm', array(
             'task' => $task,
             'user' => $user
         )));
     }
 
-    public function addInterval()
+    public function updateRelatedTask()
     {
         $task = $this->getTask();
         $user = $this->getUser();
+#ToDo
         $this->checkCSRFParam();
 
         if ($user['username'] !== $task["assignee_username"]) {

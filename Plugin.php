@@ -10,10 +10,11 @@ class Plugin extends Base
 {
     public function initialize()
     {
-        $this->projectAccessMap->add('TaskUpdateController', array("confirm", "updateTask"), Role::PROJECT_MANAGER);
+        $this->projectAccessMap->add('UpdateRelatedTaskController', array("confirm", "updateRelatedTask"), Role::PROJECT_MANAGER);
         $this->template->hook->attach('template:task:sidebar:actions', 'UpdateRelatedTaskButton:update_related_task/update_related_task_button');
     }
 
+#ToDo
 #    public function onStartup()
 #    {
 #        Translator::load($this->languageModel->getCurrentLanguage(), __DIR__.'/Locale');
