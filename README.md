@@ -7,7 +7,7 @@ Simple plugins which adds button to incrementally change time spent on task.
 Author
 ------
 
-- Igor Mroz
+- Stefan Härer
 
 
 License
@@ -34,7 +34,7 @@ You have the choice between 3 methods:
 Note: Plugin folder is case-sensitive.
 
 
-Documentation
+Description
 -------------
 
-On task summary page, in the sidebar there is "Add time interval" button, which adds 30 minutes to time actually spent on this task. Action needs to be confirmed.
+On task summary page, in the sidebar there is "Update related task" button, which updates the task with an internal relation `identical`. Action needs to be confirmed.
