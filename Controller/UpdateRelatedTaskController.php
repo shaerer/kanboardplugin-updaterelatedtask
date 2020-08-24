@@ -16,7 +16,7 @@ class UpdateRelatedTaskController extends BaseController
             throw new AccessForbiddenException();
         }
 
-        $this->response->html($this->template->render('UpdateRelatedTaskButton:update_related_task/update_confirm', array(
+        $this->response->html($this->template->render('UpdateRelatedTaskButton:update_related_task/update_related_task_confirm', array(
             'task' => $task,
             'user' => $user
         )));
