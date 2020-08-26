@@ -3,7 +3,7 @@
 namespace Kanboard\Plugin\UpdateRelatedTaskButton;
 
 use Kanboard\Core\Plugin\Base;
-#use Kanboard\Core\Translator;
+use Kanboard\Core\Translator;
 use Kanboard\Core\Security\Role;
 
 class Plugin extends Base
