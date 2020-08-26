@@ -25,9 +25,11 @@ class UpdateRelatedTaskController extends BaseController
     public function updateRelatedTask()
     {
         $task = $this->getTask();
-        $user = $this->getUser();
-//ToDo
+        $task_link = $this->getInternalTaskLink($task);
+		echo($task_link)
         $this->checkCSRFParam();
+ 
+		$user = $this->getUser();
 
         if ($user['username'] !== $task["assignee_username"]) {
             throw new AccessForbiddenException();
