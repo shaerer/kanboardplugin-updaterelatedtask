@@ -1,6 +1,6 @@
 <?php
 
-namespace Kanboard\Plugin\TaskIntervalButton\Controller;
+namespace Kanboard\Plugin\UpdateRelatedTaskButton\Controller;
 
 use Kanboard\Controller\BaseController;
 use Kanboard\Core\Controller\AccessForbiddenException;
