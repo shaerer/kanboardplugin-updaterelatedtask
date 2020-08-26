@@ -26,7 +26,7 @@ class UpdateRelatedTaskController extends BaseController
     {
         $task = $this->getTask();
         $user = $this->getUser();
-#ToDo
+//ToDo
         $this->checkCSRFParam();
 
         if ($user['username'] !== $task["assignee_username"]) {
