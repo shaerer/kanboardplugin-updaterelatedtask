@@ -1,4 +1,4 @@
-Task Interval Button
+Update Related Task Button
 ==============================
 
 Simple plugins which adds button to incrementally change time spent on task.
