@@ -26,7 +26,7 @@ class UpdateRelatedTaskController extends BaseController
     {
         $task = $this->getTask();
         $task_link = $this->getInternalTaskLink($task);
-		echo($task_link)
+		echo($task_link);
         $this->checkCSRFParam();
  
 		$user = $this->getUser();
