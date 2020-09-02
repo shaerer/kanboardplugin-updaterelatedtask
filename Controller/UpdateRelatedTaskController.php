@@ -2,6 +2,7 @@
 
 namespace Kanboard\Plugin\UpdateRelatedTaskButton\Controller;
 
+use Kanboard\Controller;
 use Kanboard\Controller\BaseController;
 use Kanboard\Core\Controller\AccessForbiddenException;
 
@@ -12,9 +13,9 @@ class UpdateRelatedTaskController extends BaseController
         $task = $this->getTask();
         $user = $this->getUser();
 
-        if ($user['username'] !== $task["assignee_username"]) {
-            throw new AccessForbiddenException();
-        }
+//	if ($user['role'] == 'app-viewer']) {
+//            throw new AccessForbiddenException();
+//        }
 
         $this->response->html($this->template->render('UpdateRelatedTaskButton:update_related_task/update_related_task_confirm', array(
             'task' => $task,
@@ -25,22 +26,13 @@ class UpdateRelatedTaskController extends BaseController
     public function updateRelatedTask()
     {
         $task = $this->getTask();
-        $task_link = $this->getInternalTaskLink($task);
         $this->checkCSRFParam();
- 
-		$user = $this->getUser();
 
-        if ($user['username'] !== $task["assignee_username"]) {
-            throw new AccessForbiddenException();
-        }
 
-        $values = array('id' => $task['id'], 'time_spent' => $task['time_spent'] + 0.5);
+	$command = escapeshellcmd( "/home/kanboard/PythonEnv/mpm_mvv/bin/python /home/kanboard/PythonCode/UpdateRelatedTaskController.py" ) . ' ' . escapeshellarg( $task['id'] );
+	$output = shell_exec($command);
 
-        if ($this->taskModificationModel->update($values, false)) {
-            $this->flash->success(t("Interval added."));
-        } else {
-            $this->flash->failure(t("Unable to add interval."));
-        }
+        $this->flash->success(t($output));
 
         return $this->response->redirect($this->helper->url->to('TaskViewController', 'show', array('task_id' => $task['id'], 'project_id' => $task['project_id'])), true);
     }

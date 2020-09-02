@@ -1,10 +1,10 @@
 <div class="page-header">
-    <h2><?= t('Update related task') ?></h2>
+    <h2><?= t('Verbundene Karte(n) updaten') ?></h2>
 </div>
 
 <div class="confirm">
     <p class="alert alert-info">
-        <?= t('Do you really want to update the related task: "%s"?', $this->text->e($task['title'])) ?>
+        <?= t('Wollen Sie wirklich alle mit "updatet" verbundenen Karten von "%s" überschreiben? (Im Zweifel bitte abbrechen und interne Links überprüfen)', $this->text->e($task['title'])) ?>
     </p>
 
     <?= $this->modal->confirmButtons(
