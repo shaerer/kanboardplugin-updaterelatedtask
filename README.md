@@ -8,7 +8,7 @@ Author
 ------
 
 - Stefan Härer
-
+(Thanks to mrozigor, used the kanboard-add-time-interval-plugin as a template)
 
 License
 -------
